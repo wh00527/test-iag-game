@@ -14,11 +14,10 @@ docker run -it -p 8080:8080 k-game /bin/bash
 ```
 ### Design consideraions
 Contains 3 main components: player.js, action.js and board.js.
-`player.js` - stateful, hold coordinate,direction,health and score, listening to command parsed in from stdin.
-`action.js` - stateless, receive coordinate and direction from player.js and perform actions accordingly.
-`board.js` - contain boundaries of the board.
-
-`index.js` reads from stdin and pass command along to player, start http server with port 8080.
+* `player.js` - stateful, hold coordinate,direction,health and score, listening to command parsed in from stdin.
+* `action.js` - stateless, receive coordinate and direction from player.js and perform actions accordingly.
+* `board.js` - contain boundaries of the board.
+* `index.js` reads from stdin and pass command along to player, start http server with port 8080.
 
 ### Prerequisites
 Running locally
@@ -44,6 +43,7 @@ Running in docker
 * Make move, type `MOVE`
 * Need help, from prompt type: `HELP`
 * Each step game console will show player health, score, and which room he/she step in
+* Check current player's status, type `MAP`
 * Game will be over if player's health is less than 1, then console will show the scores.
 * To reset board's width and height, change value from .env files under root path.The default ones are `width=50 & height=50`.
 * Quit game, type `EXIT`
