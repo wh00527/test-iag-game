@@ -10,7 +10,7 @@ npm start
 OR
 ```
 docker build -t k-game .
-docker run -it k-game /bin/bash
+docker run -it -p 8080:8080 k-game /bin/bash
 ```
 ### Design consideraions
 Contains 3 main components: player.js, action.js and board.js.
